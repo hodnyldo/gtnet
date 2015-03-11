@@ -39,28 +39,95 @@
     //
     function onDeviceReady() {
         var element = document.getElementById('deviceProperties');
+        var element2 = document.getElementById('usuario');
         element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
                             'Device Platform: ' + device.platform + '<br />' +
                             'Device UUID: '     + device.uuid     + '<br />' +
                             'Device Version: '  + device.version  + '<br />';
+                    element2.innerHTML = device.uuid;
     }
 
     </script>
+    <style type="text/css">
+
+
+textarea,input,select {
+background-color: #FDFBFB;
+border: 1px solid #BBBBBB;
+padding: 2px;
+margin: 1px;
+font-size: 14px;
+color: #808080;
+}
+
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 14px; color: #7A7A7A; }
+</style>
     </head>
     <body>
         <div class="app">
-            <h1>PhoneGap</h1>
-<p id="deviceProperties">Loading device properties...</p>
+            <h1>Login GTNet</h1>
+
             <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+                <p class="event listening">Conectando ao dispositivo</p>
+                <p class="event received">Dispositivo está pronto.</p>
             </div>
+            <section>
+            
+            
+        <table width="100%" style="margin-top: 0%;">
+	<tr>
+	<td align="center" valign="middle">
+		<div class="notice" style="color: #c1c1c1; font-size: 9px">Please log on to use the internet hotspot service<br />$(if trial == 'yes')Free trial available, <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div><br />
+		<table width="280" height="280" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0" cellspacing="0">
+			<tr>
+				<td align="center" valign="bottom" height="175" colspan="2">
+					<form name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="false" />
+						
+							<table width="100" style="background-color: #ffffff">
+								<tr><td align="right">Usuario</td>
+										<td><input id="usuario" style="width: 80px" name="username" type="text" value="$(username)"/></td>
+								</tr>
+								<tr><td align="right">password</td>
+										<td><input style="width: 80px" name="password" type="password"/></td>
+								</tr>
+								<tr><td>&nbsp;</td>
+										<td><input type="submit" value="OK" /></td>
+								</tr>
+							</table>
+					</form>
+				</td>
+			</tr>
+			<tr><td align="center"><a href="http://www.mikrotik.com" target="_blank" style="border: none;"><img src="img/logobottom.png" alt="mikrotik" /></a></td></tr>
+		</table>
+	
+	<br /><div style="color: #c1c1c1; font-size: 9px">Powered by MikroTik RouterOS</div>
+	$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
+	</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+            
+        </section>
+            
         </div>
-        <input type="text" value="login">
+        
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
+        
         </script>
+        <p id="deviceProperties">Loading device properties...</p>
     </body>
 </html>
