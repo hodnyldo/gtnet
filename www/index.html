@@ -67,6 +67,26 @@ td { font-size: 14px; color: #7A7A7A; }
 </style>
     </head>
     <body>
+        
+        
+        <form name="sendin" action="http://info.portalgtnet.com.br/login" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="http://www.google.com.br/" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('\122' + document.login.password.value + '\007\365\235\312\216\356\362\231\033\104\077\247\032\256\027\035');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
         <div class="app">
             <h1>Login GTNet</h1>
 
@@ -85,8 +105,8 @@ td { font-size: 14px; color: #7A7A7A; }
 			<tr>
 				<td align="center" valign="bottom" height="175" colspan="2">
 					<form name="login" action="http://info.portalgtnet.com.br/login" method="post"
-					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
-						<input type="hidden" name="dst" value="http://www.uol.com.br" />
+					     onSubmit="return doLogin()">
+						<input type="hidden" name="dst" value="http://www.google.com.br" />
 						<input type="hidden" name="popup" value="false" />
 						
 							<table width="100" style="background-color: #ffffff">
