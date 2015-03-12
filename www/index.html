@@ -27,6 +27,8 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <title>GTNET-APP</title>
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -38,27 +40,20 @@
     // device APIs are available
     //
     function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
-        var element2 = document.getElementById('usuario');
-        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-                    element2.innerHTML = device.uuid;
+       // var element = document.getElementById('deviceProperties');
+        var element2 = document.getElementById('username');
+        //element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+        //                    'Device Platform: ' + device.platform + '<br />' +
+        //                    'Device UUID: '     + device.uuid     + '<br />' +
+        //                    'Device Version: '  + device.version  + '<br />';
+                    element2.value = device.uuid;
     }
 
     </script>
     <style type="text/css">
 
 
-textarea,input,select {
-background-color: #FDFBFB;
-border: 1px solid #BBBBBB;
-padding: 2px;
-margin: 1px;
-font-size: 14px;
-color: #808080;
-}
+
 
 a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
 a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
@@ -67,13 +62,13 @@ td { font-size: 14px; color: #7A7A7A; }
 </style>
     </head>
     <body>
-        
-        
+       <div class="container-fluid"> 
+        <div class="row">
         <form name="sendin" action="http://info.portalgtnet.com.br/login" method="post">
 		<input type="hidden" name="username" />
 		<input type="hidden" name="password" />
-		<input type="hidden" name="dst" value="http://www.google.com.br/" />
-		<input type="hidden" name="popup" value="true" />
+		<input type="hidden" name="dst" value="sucesso.html" />
+		<input type="hidden" name="popup" value="false" />
 	</form>
 	
 	<script type="text/javascript" src="/md5.js"></script>
@@ -88,46 +83,43 @@ td { font-size: 14px; color: #7A7A7A; }
 	//-->
 	</script>
         <div class="app">
-            <h1>Login GTNet</h1>
-
-            <div id="deviceready" class="blink">
-                <p class="event listening">Conectando ao dispositivo</p>
-                <p class="event received">Dispositivo está pronto.</p>
-            </div>
             <section>
             
             
-        <table width="100%" style="margin-top: 0%;">
+        <table >
 	<tr>
 	<td align="center" valign="middle">
-		<div class="notice" style="color: #c1c1c1; font-size: 9px">Please log on to use the internet hotspot service<br />$(if trial == 'yes')Free trial available, <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</div><br />
-		<table width="280" height="280" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0" cellspacing="0">
+		<table style=" padding: 0px;" cellpadding="0" cellspacing="0">
 			<tr>
-				<td align="center" valign="bottom" height="175" colspan="2">
+				<td align="center" valign="bottom"  colspan="2">
 					<form name="login" action="http://info.portalgtnet.com.br/login" method="post"
 					     onSubmit="return doLogin()">
-						<input type="hidden" name="dst" value="http://www.google.com.br" />
+						<input type="hidden" name="dst" value="sucesso.html" />
 						<input type="hidden" name="popup" value="false" />
 						
-							<table width="100" style="background-color: #ffffff">
-								<tr><td align="right">Usuario</td>
-										<td><input id="usuario" style="width: 80px" name="username" type="text" value=""/></td>
+							<table >
+								<tr>
+                                                                    <td> <h5 class="">Você deverá informar o seguinte codigo ao atendente:</h5>
+                                                                      <input id="username" class="form-control col-xs-12 col-sm-12" placeholder="Usuário" name="username" type="text" value=""/></td>
 								</tr>
-								<tr><td align="right">password</td>
-										<td><input style="width: 80px" name="password" type="password"/></td>
+								<tr>
+                                                                    <td><input class="form-control col-xs-12 col-sm-12" placeholder="Senha" name="password" type="password"/></td>
 								</tr>
-								<tr><td>&nbsp;</td>
-										<td><input type="submit" value="OK" /></td>
-								</tr>
+
 							</table>
+                                                <nav class="navbar navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-fixed-bottom">
+<input class="form-control  btn-primary" type="submit" value="Clique aqui Entrar" />
+    </div>
+  </div>
+</nav>
 					</form>
 				</td>
 			</tr>
-			<tr><td align="center"><a href="http://www.mikrotik.com" target="_blank" style="border: none;"><img src="img/logobottom.png" alt="mikrotik" /></a></td></tr>
+			
 		</table>
 	
-	<br /><div style="color: #c1c1c1; font-size: 9px">Powered by MikroTik RouterOS</div>
-	$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
 	</td>
 	</tr>
 </table>
@@ -148,6 +140,9 @@ td { font-size: 14px; color: #7A7A7A; }
             app.initialize();
         
         </script>
-        <p id="deviceProperties">Loading device properties...</p>
+       </div>
+           </div>
+        
+        
     </body>
 </html>
