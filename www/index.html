@@ -42,21 +42,9 @@
     function onDeviceReady() {
         checkConnection();
     }
-
         function checkConnection() {
-            var networkState = navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.CELL]     = 'Cell generic connection';
-            states[Connection.NONE]     = 'No network connection';
-
-            alert('Tipo de conexão: ' + states[networkState]);
+            var networkState = WifiWizard.getCurrentSSID(ssidHandler, fail);
+            alert('Tipo de conexão: ' + networkState);
         }
 
     </script>
@@ -74,7 +62,7 @@
         //                    'Device Platform: ' + device.platform + '<br />' +
         //                    'Device UUID: '     + device.uuid     + '<br />' +
         //                    'Device Version: '  + device.version  + '<br />';
-                    element2.value = device.uuid;
+                    element2.innerHTML = device.uuid;
     }
 
     </script>
@@ -99,7 +87,7 @@ td { font-size: 14px; color: #7A7A7A; }
 		<input type="hidden" name="popup" value="false" />
 	</form>
 	
-	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript" src="md5.js"></script>
 	<script type="text/javascript">
 	<!--
 	    function doLogin() {
