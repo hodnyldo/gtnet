@@ -10,5 +10,12 @@
             "type": "registry",
             "id": "com.pylonproducts.wifiwizard"
         }
+    },
+    "org.apache.cordova.wifiinfo": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dippi/org.apache.cordova.wifiinfo",
+            "subdir": "."
+        }
     }
 }
