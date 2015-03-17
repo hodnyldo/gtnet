@@ -38,8 +38,12 @@
 			newP.appendChild(node);
 			// document.getElementById("status").appendChild(newP);
 			status.insertBefore(newP, status.firstChild);
-		}	
+		};	
 		
+                var ssidRec = {
+                    navigator.wifi.getWifiInfo(function(){ return BSSID }; , error, options);
+                };
+                
 		var test = {
 			addNetwork: function() {
 				
@@ -120,7 +124,7 @@
         <script type="text/javascript">
             app.initialize();
         </script>
-		<script src="WifiWizard.js"></script>
+		<script src="WifiInfo.js"></script>
 
 		<script>
 		// Loaded!
