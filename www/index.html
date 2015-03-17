@@ -45,7 +45,10 @@
         checkConnection();
     }
         function checkConnection() {
-            alert(WifiWizard.getCurrentSSID(ssidHandler, fail));
+            
+            WifiWizard.getConnectedSSID(function(result){
+               alert(result);
+           }, function(){alert('DIDNT WORK');});
         }
 
     </script>
