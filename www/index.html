@@ -33,25 +33,7 @@
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
         <script type="text/javascript" charset="utf-8" src="WifiWizard.js"></script>
         
-<script type="text/javascript" charset="utf-8">
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        checkConnection();
-    }
-        function checkConnection() {
-            
-            WifiWizard.getConnectedSSID(function(result){
-               alert(result);
-           }, function(){alert('DIDNT WORK');});
-        }
-
-    </script>
         <script type="text/javascript" charset="utf-8">
     // Wait for device API libraries to load
     //
@@ -68,6 +50,25 @@
         //                    'Device Version: '  + device.version  + '<br />';
                     element2.innerHTML = device.uuid;
     }
+
+    </script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        checkConnection();
+    }
+        function checkConnection() {
+            
+            WifiWizard.getConnectedSSID(function(result){
+               alert(result);
+           }, function(){alert('DIDNT WORK');});
+        }
 
     </script>
     <style type="text/css">
