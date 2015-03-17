@@ -41,7 +41,7 @@
 		};	
 		
                 var ssidRec = {
-                    navigator.wifi.getWifiInfo(function(){ return BSSID }; , error, options);
+                    navigator.wifi.getWifiInfo(function(){ addToStatus(connection.BSSID) }; , error, options);
                 };
                 
 		var test = {
@@ -111,6 +111,7 @@
 					<button type="button" name="disconnect_network" onclick='test.disconnect()'>Disconnect</button>
 					<button type="button" name="list_networks" onclick='test.listNetworks()'>List Networks</button>
 					<button type="button" name="clear_test" onclick='test.clear()'>Clear</button>
+                                        <button type="button" name="clear_test" onclick='ssidRec()'>Clear</button>
 				</form>
 			</div>
 			<br />
