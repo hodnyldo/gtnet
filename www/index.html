@@ -30,30 +30,29 @@
         <title>WifiWizard Test Application</title>
 				<script type="text/javascript">
 		
-		var addToStatus = function(message) {
-			console.log(message);
-			var newP = document.createElement("p");
-			var node = document.createTextNode(message);
-			var status = document.getElementById("status");
-			newP.appendChild(node);
-			// document.getElementById("status").appendChild(newP);
-			status.insertBefore(newP, status.firstChild);
-		};	
+//		var addToStatus = function(message) {
+//			console.log(message);
+//			var newP = document.createElement("p");
+//			var node = document.createTextNode(message);
+//			var status = document.getElementById("status");
+//			newP.appendChild(node);
+//			// document.getElementById("status").appendChild(newP);
+//			status.insertBefore(newP, status.firstChild);
+//		};	
 		
-                var ssidRec = {
+                var ssidRec = function(){
+                        alert('teste1');
                     
-                    listassid: function(){
-                        var teste1 = navigator.wifi.getWifiInfo();
+                        var teste1 = navigator.wifi.getWifiInfo(success, error, options);
+                        for (var propriedade in teste1){
+                            alert(propriedade);   
+                           }
                         alert(teste1);
-                        alert(success);
                         //for (i=0;i<recebido.length; i++){
                         //    alert(recebido[i]) ;
                         //}
-                    }
+                    };
 
-                    
-                    
-                };
                 
 		var test = {
 			addNetwork: function() {
@@ -122,7 +121,7 @@
 					<button type="button" name="disconnect_network" onclick='test.disconnect()'>Disconnect</button>
 					<button type="button" name="list_networks" onclick='test.listNetworks()'>List Networks</button>
 					<button type="button" name="clear_test" onclick='test.clear()'>Clear</button>
-                                        <button type="button" name="ssidrec" onclick='ssidRec.vamu'>SSID</button>
+                                        <button type="button" name="ssidrec" onclick='ssidRec()'>SSID</button>
                                         <br>
                                         <button type="button" name="ssidrec" onclick='ssidRec.listassid'>vamu</button>
 				</form>
@@ -142,21 +141,21 @@
 
 		<script>
 		// Loaded!
-		addToStatus("WifiTest loaded.");
-		var wwIsObject = (typeof WifiWizard == "object") ? true : false ;
-		var wwFunctions = [];
-		if (wwIsObject) {
-			for (var prop in WifiWizard) {
-				wwFunctions.push(prop);
-			}
-			wwFunctions.join(", ")
-			addToStatus("WifiWizard functions: " + wwFunctions.join(", "));
-		}
-		else {
-			addToStatus("Variable WifiWizard not an object.");
-		}
-		
-			
+//		addToStatus("WifiTest loaded.");
+//		var wwIsObject = (typeof WifiWizard == "object") ? true : false ;
+//		var wwFunctions = [];
+//		if (wwIsObject) {
+//			for (var prop in WifiWizard) {
+//				wwFunctions.push(prop);
+//			}
+//			wwFunctions.join(", ")
+//			addToStatus("WifiWizard functions: " + wwFunctions.join(", "));
+//		}
+//		else {
+//			addToStatus("Variable WifiWizard not an object.");
+//		}
+//		
+//			
 		</script>
 		
     </body>
