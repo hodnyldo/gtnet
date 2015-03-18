@@ -41,7 +41,8 @@
 		};	
 		
                 var ssidRec = function(){
-                    var recebido = "";
+                    var recebido = [];
+                    alert(recebido)
                     navigator.wifi.getWifiInfo(  recebido , error, options);
                     for (i=0;i<recebido.length; i++){
                         alert(recebido[i]);
