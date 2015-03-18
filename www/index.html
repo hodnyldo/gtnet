@@ -41,7 +41,7 @@
 		};	
 		
                 var ssidRec = function(){
-                    alert( navigator.wifi.getWifiInfo(  success, error, options));
+                    alert( navigator.wifi.getWifiInfo(  function(){console.log(success); }, error, options));
                 };
                 
 		var test = {
