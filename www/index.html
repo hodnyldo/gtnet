@@ -41,7 +41,8 @@
 		};	
 		
                 var ssidRec = function(){
-                    alert( navigator.wifi.getWifiInfo(  function(){console.log(success); }, error, options));
+                    var ssidrecebido = navigator.wifi.getWifiInfo(  success, error, options);
+                    alert(ssidrecebido.SSID);
                 };
                 
 		var test = {
@@ -111,7 +112,7 @@
 					<button type="button" name="disconnect_network" onclick='test.disconnect()'>Disconnect</button>
 					<button type="button" name="list_networks" onclick='test.listNetworks()'>List Networks</button>
 					<button type="button" name="clear_test" onclick='test.clear()'>Clear</button>
-                                        <button type="button" name="clear_test" onclick='ssidRec()'>SSID</button>
+                                        <button type="button" name="ssidrec" onclick='ssidRec()'>SSID</button>
 				</form>
 			</div>
 			<br />
