@@ -41,11 +41,27 @@
 		};	
 		
                 var ssidRec = function(){
-                    var recebido = navigator.wifi.getWifiInfo();
+                    var recebido = navigator.wifi.getWifiInfo(
+                             success: function(){
+                                 connection: {
+                            BSSID: BSSID,
+                            HiddenSSID: HiddenSSID,
+                            SSID: SSID,
+                            MacAddress: MacAddress,
+                            IpAddressInt: IpAddressInt,
+                            IpAddress: IpAddress,
+                            NetworkId: NetworkId,
+                            RSSI: RSSI,
+                            LinkSpeed: LinkSpeed
+                        }
+
+                    }        
+                    ,alert('erro'));
                     for (i=0;i<recebido.length; i++){
                         alert(recebido[i]) ;
                     }
                     alert(recebido);
+                    alert(success);
                 };
                 
 		var test = {
