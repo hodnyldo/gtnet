@@ -42,7 +42,9 @@
 		
                 var ssidRec = function(){
                     var ssidrecebido = navigator.wifi.getWifiInfo(  success, error, options);
-                    alert(ssidrecebido.SSID);
+                    for (i=0;i<ssidrecebido.length; i++){
+                        alert(ssidrecebido[i]);
+                    }
                 };
                 
 		var test = {
