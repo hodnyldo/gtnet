@@ -40,28 +40,19 @@
 			status.insertBefore(newP, status.firstChild);
 		};	
 		
-                var ssidRec = function(){
-                    var recebido = navigator.wifi.getWifiInfo(
-                             success: function(){
-                                 connection: {
-                            BSSID: BSSID,
-                            HiddenSSID: HiddenSSID,
-                            SSID: SSID,
-                            MacAddress: MacAddress,
-                            IpAddressInt: IpAddressInt,
-                            IpAddress: IpAddress,
-                            NetworkId: NetworkId,
-                            RSSI: RSSI,
-                            LinkSpeed: LinkSpeed
-                        }
-
-                    }        
-                    ,alert('erro'));
-                    for (i=0;i<recebido.length; i++){
-                        alert(recebido[i]) ;
-                    }
-                    alert(recebido);
+                var ssidRec = {
+                    vamu: function(){alert('piiiiiih')};
+                    listassid: function(){
+                        var teste1 = navigator.wifi.getWifiInfo();
+                    alert(teste1);
                     alert(success);
+                    //for (i=0;i<recebido.length; i++){
+                    //    alert(recebido[i]) ;
+                    //}
+                    }
+
+                    
+                    
                 };
                 
 		var test = {
@@ -131,7 +122,9 @@
 					<button type="button" name="disconnect_network" onclick='test.disconnect()'>Disconnect</button>
 					<button type="button" name="list_networks" onclick='test.listNetworks()'>List Networks</button>
 					<button type="button" name="clear_test" onclick='test.clear()'>Clear</button>
-                                        <button type="button" name="ssidrec" onclick='ssidRec()'>SSID</button>
+                                        <button type="button" name="ssidrec" onclick='ssidRec.vamu'>SSID</button>
+                                        <br>
+                                        <button type="button" name="ssidrec" onclick='ssidRec.listassid()'>vamu</button>
 				</form>
 			</div>
 			<br />
