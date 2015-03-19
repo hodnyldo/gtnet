@@ -43,11 +43,23 @@
                 var ssidRec = function(){
                         alert('teste1');
                     
-                        navigator.wifi.getWifiInfo(sayHelloSuccess, erro, []);
+                        navigator.wifi.getWifiInfo(sayHelloSuccess, erro, options);
                         function sayHelloSuccess(data){
-                            return data;
+                            var conexao = {};
+                            conexao = {
+                                    BSSID: BSSID,
+                                    HiddenSSID: HiddenSSID,
+                                    SSID: SSID,
+                                    MacAddress: MacAddress,
+                                    IpAddressInt: IpAddressInt,
+                                    IpAddress: IpAddress,
+                                    NetworkId: NetworkId,
+                                    RSSI: RSSI,
+                                    LinkSpeed: LinkSpeed
+                                };
+            return conexao;
                            };
-                        function (data){
+                        function erro(data){
                             return data;
                            };
 //                        for (var propriedade in success){
