@@ -45,7 +45,7 @@
                     
                         sucesso = navigator.wifi.getWifiInfo(sayHelloSuccess, erro, option1);
                         function sayHelloSuccess(){
-                            var conexao = {};
+                            var conexao = [];
                             conexao = {
                                     BSSID: BSSID,
                                     HiddenSSID: HiddenSSID,
@@ -60,7 +60,7 @@
             return conexao;
                            };
                         function erro(data){
-                            errin = 'erro geral'
+                            errin = ['erro geral'];
                             return errin;
                            };
 //                        for (var propriedade in success){
