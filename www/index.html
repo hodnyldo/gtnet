@@ -43,7 +43,11 @@
                 var ssidRec = function(){
                         alert('teste1');
                     
-                        navigator.wifi.getWifiInfo(success, error, options);
+                        navigator.wifi.getWifiInfo(function(sucesso) {
+                                                alert(sucesso);
+                                            }, function(erro) {
+                                                alert(erro);
+                                            }, []);
                         for (var propriedade in success){
                             alert(propriedade);   
                            }
