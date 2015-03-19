@@ -43,8 +43,8 @@
                 var ssidRec = function(){
                         alert('teste1');
                     
-                        navigator.wifi.getWifiInfo(sayHelloSuccess, erro, options);
-                        function sayHelloSuccess(data){
+                        sucesso = navigator.wifi.getWifiInfo(sayHelloSuccess, erro, option1);
+                        function sayHelloSuccess(){
                             var conexao = {};
                             conexao = {
                                     BSSID: BSSID,
@@ -60,13 +60,19 @@
             return conexao;
                            };
                         function erro(data){
-                            return data;
+                            errin = 'erro geral'
+                            return errin;
                            };
 //                        for (var propriedade in success){
 //                            alert(propriedade);   
 //                           };
+
+                        function option1(){
+                            opcao = [];
+                            return opcao;
+                        }
                            
-                        alert(success);
+                        alert(sucesso);
                         //for (i=0;i<recebido.length; i++){
                         //    alert(recebido[i]) ;
                         //}
