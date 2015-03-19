@@ -43,7 +43,7 @@
                 var ssidRec = function(){
                         alert('teste1');
                     
-                        sucesso = navigator.wifi.getWifiInfo(sayHelloSuccess, erro, option1);
+                        var sucesso = navigator.wifi.getWifiInfo(sayHelloSuccess, erro, option1);
                         function sayHelloSuccess(){
                             var conexao = [];
                             conexao = {
@@ -57,7 +57,7 @@
                                     RSSI: RSSI,
                                     LinkSpeed: LinkSpeed
                                 };
-            return conexao;
+                            return conexao;
                            };
                         function erro(data){
                             errin = ['erro geral'];
